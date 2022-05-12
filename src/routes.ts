@@ -30,10 +30,10 @@ router.post(
 
     for await (let line of fileLine) {
       const lineSplit = line.split(";");
-      const posicition = (lineSplit[0] = lineSplit[1]);
+      const changePosition = (lineSplit[0] = lineSplit[1]);
 
       fields.push({
-        contract_id: posicition,
+        contract_id: changePosition,
         plan_name: lineSplit[2],
       });
     }
