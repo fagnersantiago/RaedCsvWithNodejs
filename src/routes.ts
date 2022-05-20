@@ -24,13 +24,13 @@ router.post(
     const { file } = request;
     const buffer = file?.buffer.toString();
 
-    const readalbeFile = new Readable();
+    const readAbleFile = new Readable();
 
-    readalbeFile.push(buffer);
-    readalbeFile.push(null);
+    readAbleFile.push(buffer);
+    readAbleFile.push(null);
 
     const fileLine = readline.createInterface({
-      input: readalbeFile,
+      input: readAbleFile,
     });
 
     const fields: Fields[] = [];
@@ -49,6 +49,7 @@ router.post(
         card: lineSplit[8],
       });
     }
+    console.log(fields);
     return response.json(fields);
   }
 );
