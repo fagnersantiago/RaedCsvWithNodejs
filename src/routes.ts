@@ -39,16 +39,15 @@ router.post(
 
     for await (let line of fileLine) {
       const lineSplit = line.split(";");
-      const changePosition = lineSplit[1];
       fields.push({
-        id_pth: lineSplit[1],
-        contract_id: changePosition,
+        id_pth: lineSplit[0],
+        contract_id: lineSplit[1],
         plan: lineSplit[2],
-        city: lineSplit[4],
-        address: lineSplit[5],
-        neighborhood: lineSplit[6],
-        cellphone: lineSplit[7],
-        card: lineSplit[8],
+        city: lineSplit[3],
+        address: lineSplit[4],
+        neighborhood: lineSplit[5],
+        cellphone: lineSplit[6],
+        card: lineSplit[7],
       });
     }
     for await (let {
